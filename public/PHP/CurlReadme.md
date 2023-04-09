@@ -158,9 +158,9 @@ $curl->addCookieArray($cookie) ;  // 導入Cookie Array (鍵: Cooike名稱, 值:
 $curl->get("https://www.example.com/");
 ```
 
-### getUrlCookie
+### getUrlSetCookie
 ``` php
-$cookie = $curl->getUrlCookie("https://www.example.com/"); // 導入要獲取Cookie的網站
+$cookie = $curl->getUrlSetCookie($curl2, "https://www.example.com/"); // 導入由Curl類構造的變量(可以在這個導入的變量中加入自己的想法), 要獲取SetCookie的網站
 ```
 
 ### setProxy

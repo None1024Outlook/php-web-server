@@ -214,14 +214,12 @@ class Curl {
     /**
      * @param string $url
      */
-    function getUrlCookie($url) {
-        $tmpCurl = new Curl();
-        $tmpCurl->setOpt(CURLOPT_RETURNTRANSFER, true);
-        $tmpCurl-> setOpt(CURLOPT_HEADER, true);
-        $tmpCurl->get($url);
-        preg_match_all('/^Set-Cookie: (.*?);/m', $tmpCurl->response,$tmp);
+    function getUrlSetCookie($ch, $url) {
+        $ch->setOpt(CURLOPT_HEADER, true);
+        $ch->get($url);
+        preg_match_all('/^Set-Cookie: (.*?);/m', $ch->response,$tmp);
         $tmpCookie = $tmp[1][0].';'.$tmp[1][1];
-        unset($tmpCurl);
+        unset($ch);
         return $tmpCookie;
     }
 
