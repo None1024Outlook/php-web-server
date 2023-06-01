@@ -20,7 +20,7 @@ $TOKEN = "hyiyg8wJ5LSF1LDkz8XWt3rgUz11mdzGc4UiTmdgWKE";
 $PROXY = "127.0.0.1:7890";
 $PROXY_PIXIVURL = "pixiv.re";
 $curl = new Curl();
-$curl->setProxy("127.0.0.1", "7890", CURLPROXY_HTTP);
+// $curl->setProxy("127.0.0.1", "7890", CURLPROXY_HTTP);
 $curl->setReturnTransfer(true);
 $curl->stopSSL();
 $curl->setTimeOut(15);
