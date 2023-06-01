@@ -12,7 +12,7 @@ function refresh_token_to_access_token($refresh_token) {
     $headers = array("user-agent" => "PixivIOSApp/7.13.3 (iOS 14.6; iPhone13,2)", "app-os-version" => "14.6", "app-os" => "ios");
     $curl->addHeaderArray($headers);
     $curl->setTimeOut(15);
-    $curl->setProxy("127.0.0.1", "7890", CURLPROXY_HTTP);
+    //$curl->setProxy("127.0.0.1", "7890", CURLPROXY_HTTP);
     $curl->stopSSL();
     $curl->setReturnTransfer(true);
     $curl->post("https://oauth.secure.pixiv.net/auth/token", $data);
