@@ -20,8 +20,8 @@ if ($view_id == "") {
     exit("<center><h3>ID参数错误, 请返回或联系网站管理员</h3></center>");
 }
 $url = "https://www.pixiv.net/ajax/illust/$view_id";
-$view_page_count = json_decode(file_get_contents($url, false, $CTX), true)["body"]["pageCount"]; // 结果转换为数组 
-
+//$view_page_count = json_decode(file_get_contents($url, false, $CTX), true)["body"]["pageCount"]; // 结果转换为数组 
+$view_page_count = json_decode(file_get_contents($url, false), true)["body"]["pageCount"]; // 结果转换为数组
 if ($view_page_count == 1) {
     exit("<img src='http://pixiv.re/$view_id.jpg'></img>");
 } else {
